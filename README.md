@@ -70,3 +70,54 @@ Documentation from
 #### Test API is enable to access through Kong API Gateway
 > GET localhost:8000/apidummy
 
+## Utiize Plugin
+
+#### Add an Anonymous Consumer 
+> POST localhost:8001/consumers
+```
+{
+    "username": "anon"
+}
+```
+
+#### Add a Consumer 
+> POST localhost:8001/consumers
+```
+{
+    "username": "betavianb"
+}
+```
+
+#### Enable Key-Authentication Plugin on Service
+> POST localhost:8001/plugins
+```
+{
+    "name": "key-auth",
+    "config.key_names": "key"
+}
+```
+
+#### Consumer Request Key 
+> POST localhost:8001/consumers/betavianb/key-auth
+##### Fetch the key given for authentication
+```
+{
+    "consumer": { "id": "876bf719-8f18-4ce5-cc9f-5b5af6c36007" },
+    "created_at": 1443371053000,
+    "id": "62a7d3b7-b995-49f9-c9c8-bac4d781fb59",
+    "key": "62eb165c070a41d5c1b58d9d3d725ca1"
+}
+```
+
+### Call the API 
+> GET localhost:8000/apidummy
+
+### Use the Key given to get authentication
+> GET localhost:8000/apidummy
+> HEADER "key": "62eb165c070a41d5c1b58d9d3d725ca1"
+
+
+
+
+
+
