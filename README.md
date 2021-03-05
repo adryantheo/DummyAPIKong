@@ -89,7 +89,7 @@ Documentation from
 ```
 
 #### Enable Key-Authentication Plugin on Service
-> POST localhost:8001/plugins
+> POST localhost:8001/services/dummy-api/plugins
 ```
 {
     "name": "key-auth",
@@ -114,6 +114,7 @@ Documentation from
 
 ### Use the Key given to get authentication
 > GET localhost:8000/apidummy
+
 > HEADER "key": "62eb165c070a41d5c1b58d9d3d725ca1"
 
 
