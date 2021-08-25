@@ -4,6 +4,8 @@ Dummy API Untuk HandsOn Kong API
 1. npm -i
 2. node index.js
 
+# Postman Collections
+> https://www.getpostman.com/collections/553a8e2e7bb7fab7aa1e
 
 # Kong-Tutorial
 
